@@ -2,10 +2,10 @@ Developing
 ==========
 
 Create a new virtualenv and install the required libraries for
-the default pyfirebase + the testing tools.
+the default pyfireconnect + the testing tools.
 
 ```
-mkvirtualenv -p python3 pyfirebase-dev # if you have virtualenvwrapper installed
+mkvirtualenv -p python3 pyfireconnect-dev # if you have virtualenvwrapper installed
 pip install -r requirements.txt -r requirements.dev.txt
 ```
 
@@ -18,7 +18,7 @@ cp ./tests/config.template.py ./tests/config.py
 ```
 
 Note that to make it easier to run the tests, they read/write to
-`/pyfirebase_tests/` on your firebase database. They should not mess
+`/pyfireconnect_tests/` on your firebase database. They should not mess
 up the rest of the database.
 
 

@@ -2,7 +2,7 @@
 
 A simple python wrapper for the [Firebase API](https://firebase.google.com).
 
-Originally forked from https://github.com/thisbejim/pyfirebase and now compatible with Python 3.7
+Originally forked from https://github.com/thisbejim/pyfireconnect and now compatible with Python 3.7
 
 ## Installation
 
@@ -14,14 +14,14 @@ pip install pyfirerebase
 
 ### Python Version
 
-pyfirebase was written for python 3
+pyfireconnect was written for python 3
 
-### Add pyfirebase to your application
+### Add pyfireconnect to your application
 
 For use with only user based authentication we can create the following configuration:
 
 ```python
-import pyfirebase
+import pyfireconnect
 
 config = {
   "apiKey": "apiKey",
@@ -30,14 +30,14 @@ config = {
   "storageBucket": "projectId.appspot.com"
 }
 
-firebase = pyfirebase.initialize_app(config)
+firebase = pyfireconnect.initialize_app(config)
 ```
 
 We can optionally add a [service account credential](https://firebase.google.com/docs/server/setup#prerequisites) to our
 configuration that will allow our server to authenticate with Firebase as an admin and disregard any security rules.
 
 ```python
-import pyfirebase
+import pyfireconnect
 
 config = {
   "apiKey": "apiKey",
@@ -47,7 +47,7 @@ config = {
   "serviceAccount": "path/to/serviceAccountCredentials.json"
 }
 
-firebase = pyfirebase.initialize(config)
+firebase = pyfireconnect.initialize(config)
 ```
 
 Adding a service account will authenticate as an admin by default for all database queries, check out the
@@ -55,7 +55,7 @@ Adding a service account will authenticate as an admin by default for all databa
 
 ### Use Services
 
-A pyfirebase app can use multiple Firebase services.
+A pyfireconnect app can use multiple Firebase services.
 
 ```firebase.auth()``` - [Authentication](#authentication)
 
@@ -278,7 +278,7 @@ You can listen to live changes to your data with the ```stream()``` method.
 def stream_handler(message):
     print(message["event"]) # put
     print(message["path"]) # /-K7yGTTEp7O549EzTYtI
-    print(message["data"]) # {'title': 'pyfirebase', "body": "etc..."}
+    print(message["data"]) # {'title': 'pyfireconnect', "body": "etc..."}
 
 my_stream = db.child("posts").stream(stream_handler)
 ```

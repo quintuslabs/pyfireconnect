@@ -1,6 +1,6 @@
 .DS_Store
 .idea
-pyfirebase.egg-info
+pyfireconnect.egg-info
 build
 dist
 test.py
@@ -8,7 +8,7 @@ test.png
 run.py
 __pycache__
 *.pyc
-pyfirebase.py.orig
+pyfireconnect.py.orig
 /secret.json
 /tests/config.py
 .cache

@@ -1,17 +1,17 @@
 from setuptools import setup, find_packages
 
 setup(
-    name='pyfirebase',
+    name='pyfireconnect',
     version='1.0.0',
-    url='https://github.com/quintuslabs/pyfirebase',
-    description='A simple python wrapper for the Firebase API, originally forked from https://github.com/thisbejim/pyfirebase and now compatible with Python 3.7',
+    url='https://github.com/quintuslabs/pyfireconnect',
+    description='A simple python wrapper for the Firebase API, originally forked from https://github.com/thisbejim/pyfireconnect and now compatible with Python 3.7',
     author='Quintus Labs',
     license='MIT',
     classifiers=[
-        'Development Status :: 1 - Alpha',
+        'Development Status :: 2 - Pre-Alpha',
         'Intended Audience :: Developers',
         'License :: OSI Approved :: MIT License',
-        'Programming Language :: Python :: 3.7',
+        'Programming Language :: Python :: 3.5',
     ],
     keywords=('Firebase','Python 3',),
     packages=find_packages(exclude=['tests']),

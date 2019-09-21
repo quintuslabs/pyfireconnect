@@ -1,1 +1,0 @@
-from .pyfirebase import initialize

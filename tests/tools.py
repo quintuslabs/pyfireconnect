@@ -1,4 +1,4 @@
-from pyfirebase import pyfirebase
+from pyfireconnect import pyfireconnect
 from tests import config
 
 
@@ -8,4 +8,4 @@ def make_db(service_account=False):
     else:
         c = config.SIMPLE_CONFIG
 
-    return pyfirebase.initialize_app(c).database()
+    return pyfireconnect.initialize_app(c).database()
