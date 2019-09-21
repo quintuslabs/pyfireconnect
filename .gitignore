@@ -1,0 +1,16 @@
+.DS_Store
+.idea
+pyfirebase.egg-info
+build
+dist
+test.py
+test.png
+run.py
+__pycache__
+*.pyc
+pyfirebase.py.orig
+/secret.json
+/tests/config.py
+.cache
+
+!/tests/test.py
