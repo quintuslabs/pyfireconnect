@@ -7,14 +7,14 @@ Originally forked from https://github.com/thisbejim/pyfireconnect and now compat
 ## Installation
 
 ```python
-pip install pyfirerebase
+pip install pyfireconnect
 ```
 
 ## Getting Started
 
 ### Python Version
 
-pyfireconnect was written for python 3
+pyfireconnect was written for python 3 and tested with 2.7
 
 ### Add pyfireconnect to your application
 
@@ -30,7 +30,7 @@ config = {
   "storageBucket": "projectId.appspot.com"
 }
 
-firebase = pyfireconnect.initialize_app(config)
+firebase = pyfireconnect.initialize(config)
 ```
 
 We can optionally add a [service account credential](https://firebase.google.com/docs/server/setup#prerequisites) to our
