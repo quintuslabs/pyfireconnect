@@ -30,7 +30,7 @@ config = {
   "storageBucket": "projectId.appspot.com"
 }
 
-firebase = pyfirebase.initialize_app(config)
+firebase = pyfirebase.initialize(config)
 ```
 
 We can optionally add a [service account credential](https://firebase.google.com/docs/server/setup#prerequisites) to our
