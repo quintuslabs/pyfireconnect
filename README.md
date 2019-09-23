@@ -1,8 +1,8 @@
 # FirebasePy
 
-A simple python wrapper for the [Firebase API](https://firebase.google.com).
+A simple python connector for the [Firebase API](https://firebase.google.com).
 
-Originally forked from https://github.com/thisbejim/pyfireconnect and now compatible with Python 3.7
+Originally forked from https://github.com/thisbejim/pyrebase and now compatible with Python 3.7
 
 ## Installation
 
