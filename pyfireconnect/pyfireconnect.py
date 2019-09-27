@@ -172,6 +172,17 @@ class Auth:
         raise_detailed_error(request_object)
         return request_object.json()
 
+    def social_signup(self, access_token, provider_id, request_uri):
+        request_ref = "https://www.googleapis.com/identitytoolkit/v3/relyingparty/verifyAssertion?key={0}".format(
+            self.api_key)
+        headers = {"content-type": "application/json; charset=UTF-8"}
+        post_body = 'access_token=%s&providerId=%s' % (access_token, provider_id)
+        req_data = {'postBody': post_body, 'requestUri': request_uri, 'returnSecureToken': True, 'returnIdpCredential': True}
+        data = json.dumps(req_data)
+        request_object = requests.post(request_ref, headers=headers, data=data)
+        raise_detailed_error(request_object)
+        return request_object.json()
+
 
 class Database:
     """ Database Service """

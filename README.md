@@ -2,7 +2,13 @@
 
 A simple python connector for the [Firebase API](https://firebase.google.com).
 
-Originally forked from https://github.com/thisbejim/pyrebase and now compatible with Python 3.7
+Originally forked from https://github.com/thisbejim/pyrebase
+
+**Additional Features**
+
+_Compatible with Python 2.7 - 3.7_
+
+_Social Signup_
 
 ## Installation
 
@@ -77,6 +83,14 @@ auth = firebase.auth()
 
 # Log the user in
 user = auth.sign_in_with_email_and_password(email, password)
+
+
+#social sign up
+fb_access_token = "EAANUSasYcQEBAJNudphsPoizjpohueZA3nX7ZCFdpWlDmgJ19zDdu3dJQQ4sZBXDMA6KTqY58MBAK6kBeegZBnoVtRmHmAmkc26pAarUr6ycAYlZArUH2m5RbgEst2ms6mc5JVrSJGJsGyQOgdzRPeJkdIdEoekPG0DnJBdndsMce4ycD6OrEixZCcwPVKOiZBEKy0wTOJQ3wZDZD"
+request_uri = 'http://localhost'
+social_user = auth.social_signup(fb_access_token, "facebook.com", request_uri)
+
+
 
 # Get a reference to the database service
 db = firebase.database()
