@@ -1,6 +1,10 @@
 Developing
 ==========
 
+twine upload dist/pyfireconnect-1.0.2.tar.gz
+python setup.py sdist
+
+
 Create a new virtualenv and install the required libraries for
 the default pyfireconnect + the testing tools.
 
