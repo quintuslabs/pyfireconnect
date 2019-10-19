@@ -1,6 +1,10 @@
 Developing
 ==========
 
+python setup.py sdist bdist_wheel
+
+
+
 twine upload dist/pyfireconnect-1.0.2.tar.gz
 python setup.py sdist
 

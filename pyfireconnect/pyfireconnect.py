@@ -24,6 +24,9 @@ import python_jwt as jwt
 from Crypto.PublicKey import RSA
 import datetime
 
+REQUEST_TYPE = {"NEW_EMAIL_ACCEPT": "NEW_EMAIL_ACCEPT", "OLD_EMAIL_AGREE": "OLD_EMAIL_AGREE",
+                "PASSWORD_RESET": "PASSWORD_RESET", "VERIFY_EMAIL": "VERIFY_EMAIL"}
+
 
 def initialize(config):
     return Firebase(config)
@@ -140,7 +143,7 @@ class Auth:
         request_ref = "https://www.googleapis.com/identitytoolkit/v3/relyingparty/getOobConfirmationCode?key={0}".format(
             self.api_key)
         headers = {"content-type": "application/json; charset=UTF-8"}
-        data = json.dumps({"requestType": "VERIFY_EMAIL", "idToken": id_token})
+        data = json.dumps({"requestType": REQUEST_TYPE["VERIFY_EMAIL"], "idToken": id_token})
         request_object = requests.post(request_ref, headers=headers, data=data)
         raise_detailed_error(request_object)
         return request_object.json()
@@ -149,7 +152,7 @@ class Auth:
         request_ref = "https://www.googleapis.com/identitytoolkit/v3/relyingparty/getOobConfirmationCode?key={0}".format(
             self.api_key)
         headers = {"content-type": "application/json; charset=UTF-8"}
-        data = json.dumps({"requestType": "PASSWORD_RESET", "email": email})
+        data = json.dumps({"requestType": REQUEST_TYPE["PASSWORD_RESET"], "email": email})
         request_object = requests.post(request_ref, headers=headers, data=data)
         raise_detailed_error(request_object)
         return request_object.json()
@@ -177,11 +180,23 @@ class Auth:
             self.api_key)
         headers = {"content-type": "application/json; charset=UTF-8"}
         post_body = 'access_token=%s&providerId=%s' % (access_token, provider_id)
-        req_data = {'postBody': post_body, 'requestUri': request_uri, 'returnSecureToken': True, 'returnIdpCredential': True}
+        req_data = {'postBody': post_body, 'requestUri': request_uri, 'returnSecureToken': True,
+                    'returnIdpCredential': True}
         data = json.dumps(req_data)
         request_object = requests.post(request_ref, headers=headers, data=data)
         raise_detailed_error(request_object)
         return request_object.json()
+
+    def change_password(self, idToken, password, returnSecureToken=False):
+        request_ref = "https://identitytoolkit.googleapis.com/v1/accounts:update?key={0}".format(
+            self.api_key)
+        headers = {"content-type": "application/json; charset=UTF-8"}
+        req_data = {"idToken" : idToken, "password" : password, "returnSecureToken" : "true" if (returnSecureToken) else "false"}
+        data = json.dumps(req_data)
+        request_object = requests.post(request_ref, headers=headers, data=data)
+        raise_detailed_error(request_object)
+        return request_object.json()
+
 
 
 class Database:
