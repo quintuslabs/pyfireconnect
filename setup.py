@@ -9,7 +9,7 @@ with open(path.join(this_directory, 'README.md'), encoding='utf-8') as f:
 
 setup(
     name='pyfireconnect',
-    version='1.0.2',
+    version='1.0.3',
     url='https://github.com/quintuslabs/pyfireconnect',
     description='A simple python wrapper for the Firebase API compatible with Python 3.7, supports social signup',
     long_description=long_description,
