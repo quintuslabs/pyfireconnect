@@ -1,12 +1,17 @@
-# FirebasePy
+# PyFireConnect
 
-A simple python connector for the [Firebase API](https://firebase.google.com).
+A python connector library for firebase [Firebase REST API](https://firebase.google.com). You can use this in a plain vanilla Python application or django application.
 
-Originally forked from https://github.com/thisbejim/pyrebase
 
-**Additional Features**
+**Key Highlights of Features**
 
 _Compatible with Python 2.7 - 3.7_
+
+_Authentication_
+
+_Database_
+
+_Storage_
 
 _Social Signup_
 
@@ -87,7 +92,9 @@ user = auth.sign_in_with_email_and_password(email, password)
 
 #social sign up
 fb_access_token = "EAANUSasYcQEBAJNudphsPoizjpohueZA3nX7ZCFdpWlDmgJ19zDdu3dJQQ4sZBXDMA6KTqY58MBAK6kBeegZBnoVtRmHmAmkc26pAarUr6ycAYlZArUH2m5RbgEst2ms6mc5JVrSJGJsGyQOgdzRPeJkdIdEoekPG0DnJBdndsMce4ycD6OrEixZCcwPVKOiZBEKy0wTOJQ3wZDZD"
+
 request_uri = 'http://localhost'
+
 social_user = auth.social_signup(fb_access_token, "facebook.com", request_uri)
 
 
@@ -441,3 +448,5 @@ articles_by_likes = db.sort(articles, "likes")
 #### Index not defined
 
 Indexing is [not enabled](https://www.firebase.com/docs/security/guide/indexing-data.html) for the database reference.
+
+This project is forked from https://github.com/thisbejim/pyrebase
