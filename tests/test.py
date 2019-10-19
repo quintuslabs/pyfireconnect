@@ -1,14 +1,6 @@
 from pyfireconnect import pyfireconnect
-from pyfireconnect.pyfireconnect import REQUEST_TYPE
 
 SIMPLE_CONFIG = {
-    "apiKey" : "AIzaSyA2Ok_NIHj5OF7-sevl8wegH73XXZpMoJ4",
-    "authDomain" : "wiallow.firebaseapp.com",
-    "databaseURL": "https://wiallow.firebaseio.com",
-    "projectId" : "wiallow",
-    "storageBucket": "",
-    "messagingSenderId" : "408646127681",
-    "appId" : "1:408646127681:web:68051044b77016703276c0"
 }
 
 firebase = pyfireconnect.initialize(SIMPLE_CONFIG)
