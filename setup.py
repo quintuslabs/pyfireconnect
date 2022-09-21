@@ -29,7 +29,7 @@ setup(
         'gcloud==0.18.3',
         'oauth2client==4.1.3',
         'requests_toolbelt==0.9.1',
-        'python_jwt==3.2.4',
+        'python_jwt==3.3.4',
         'pycryptodome==3.9.0',
         'urllib3==1.25.5'
     ]
